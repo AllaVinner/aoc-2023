@@ -45,31 +45,25 @@ code {
   margin: 0;
   padding: 0;
   white-space: pre;
+  background: #10101a;
+  border: 1px solid #28282d;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 
-code:before {
-  z-index: -1;
-  content: "";
-  position: absolute;
-  display: block;
-  left: -2px;
-  right: -2px;
-  top: 3px;
-  bottom: 0px;
-  border: 1px solid #333340;
-  background: #10101a;
-}
 
 
 textarea {
   font-size: 1.4rem;
   font-family: "Source Code Pro", monospace;
   background-color: #10101a;
-  border: 1px solid #333340;
+  border: 1px solid #28282d;
   color: #cccccc;
   max-height: 600px;
   min-height: 200px;
   min-width: 100px;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 
 textarea:focus {
@@ -88,4 +82,24 @@ textarea::-webkit-scrollbar-track {
 textarea::-webkit-scrollbar-thumb {
   background: #009900;
 }
+
+
+
+input[type="file"]::file-selector-button {
+  color: #cccccc;
+  font-family: "Source Code Pro", monospace;
+  font-weight: 300;
+  font-size: 14pt;
+  background-color: #10101a;
+  color: #009900;
+  border: none;
+  border-radius: 10%;
+  height: 2.5rem;
+}
+
+input[type="file"]::file-selector-button:hover {
+  color: #ffff66;
+}
+
+
 

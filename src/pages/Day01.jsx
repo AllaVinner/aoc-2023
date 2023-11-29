@@ -1,14 +1,29 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import '../App.css'
+import TextFileUpload from '../components/TextFileUploader'
+
+import * as wasm from "../../wasm-src/pkg/wasm_src.js";
+import AoCInput from '../components/AoCInput.jsx';
 
 function Day01() {
-    const [count, setCount] = useState(0)
+    const [inputContent, setInputContent] = useState("");
+    const [answere, setAnswere] = useState("");
+    
     let s = `\
 How to start learning web development?
 fn main() {
    let hello = vec!["sdf"df]
 }
-`
+`   
+    useEffect(() => {
+        try {
+            console.log(inputContent)
+            let new_ans = wasm.day01_part1(inputContent);
+            setAnswere(new_ans)
+        } catch (error) {
+            setAnswere("<Invalid Input>")
+        }
+    }, [inputContent])
     return (
         <>
             <div id={'day01'}>
@@ -17,8 +32,10 @@ fn main() {
                 </h1>
                 <div>------------</div>
                 <br />
-                <br />
-                <input type="file" id="myFile" multiple size="50" onChange={(e) => console.log(e)}></input>
+                <AoCInput inputContent={inputContent} setInputContent={setInputContent}/>
+                <div>
+                    Todays answere was: {answere}
+                </div>
                 <div>
                     Hello
                     <y>From</y>
@@ -27,7 +44,6 @@ fn main() {
                         {s}
                     </code>
                 </div>
-                <textarea name="Text1" cols="40" rows="5"></textarea>
             </div>
         </>
     )

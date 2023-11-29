@@ -9,6 +9,7 @@ import Day02 from "./pages/Day02"
 import Day03 from "./pages/Day03"
 import Day04 from "./pages/Day04"
 
+
 function Dummy({text}) {
   return <div>Dummy {text}</div>
 }
