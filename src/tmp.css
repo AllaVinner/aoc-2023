@@ -1,0 +1,28 @@
+#header {
+    grid-area: header2;
+}
+
+.header0 {
+    font-size: 3.5rem;
+    color: #009900;
+    text-shadow: 0 0 2px #00cc00, 0 0 5px #00cc00;
+    text-align: center;
+}
+
+#sidebar {
+    grid-area: sidebar2;
+}
+
+.sidebar0 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#content {
+    grid-area: content2;
+}
+
+.content0 {
+    grid-area: content2;
+}

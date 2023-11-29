@@ -1,0 +1,91 @@
+
+
+.green-glow {
+    text-shadow: 0 0 2px #00cc00, 0 0 5px #00cc00;
+    color: #009900;
+}
+
+g {
+  color: #009900;
+}
+
+gg {
+  text-shadow: 0 0 2px #00cc00, 0 0 5px #00cc00;
+  color: #009900;
+}
+
+.green {
+    color: #009900;
+}
+
+.yellow { 
+  color: #ffff66;
+}
+
+y {
+  color: #ffff66;
+}
+
+r {
+  color: #860A35;
+}
+
+
+ul {
+  list-style-type: none;
+}
+
+p {
+  white-space: pre;
+}
+
+code {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+}
+
+code:before {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  display: block;
+  left: -2px;
+  right: -2px;
+  top: 3px;
+  bottom: 0px;
+  border: 1px solid #333340;
+  background: #10101a;
+}
+
+
+textarea {
+  font-size: 1.4rem;
+  font-family: "Source Code Pro", monospace;
+  background-color: #10101a;
+  border: 1px solid #333340;
+  color: #cccccc;
+  max-height: 600px;
+  min-height: 200px;
+  min-width: 100px;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+textarea::-webkit-scrollbar {
+  width: 0.35rem;
+  cursor: auto;
+}
+
+textarea::-webkit-scrollbar-track {
+  background: #cccccc;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background: #009900;
+}
+
