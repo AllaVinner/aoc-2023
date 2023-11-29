@@ -13,7 +13,7 @@ function Day01() {
 How to start learning web development?
 fn main() {
    let hello = vec!["sdf"df]
-}
+} 
 `   
     useEffect(() => {
         try {
