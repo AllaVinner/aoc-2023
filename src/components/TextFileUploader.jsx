@@ -10,15 +10,34 @@ function TextFileUpload({ setText }) {
             "load",
             () => {
               // this will then display a text file
-              setText(fileReader.result);
+              console.log('in listner before asignment')
+              setText(fileReader.result.replace(/\r/g, ''));
+              console.log('in listner after asignment')
             },
             false,
           );
         
-          if (e.target.files) {
-            fileReader.readAsText(e.target.files[0], "UTF-8");
+      if (e.target.files) {
+          console.log('Before')
+          fileReader.readAsText(e.target.files[0], "UTF-8");
+          console.log('After')
           }
     }
+  
+    function handleFileUpload2(e) {
+      const next_file = URL.createObjectURL(e.target.files[0])
+      if (!next_file) {
+        console.log("No file found")
+        return "<No File>";
+      }
+      fetch(next_file)
+        .then((response) => {
+          var fileReader = new FileReader();
+          fileReader.readAsText(response.blob(), "UTF-8");
+        })
+    
+    }
+  
     return (
         <>
             <input type="file" id="myFile" multiple size="50" onChange={handleFileUpload}></input>

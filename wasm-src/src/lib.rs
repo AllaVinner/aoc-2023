@@ -40,7 +40,7 @@ pub fn print_image(data: String) -> String{
     if data == "" {
         return "".to_string();
     }
-    return process_part1(&data);
+    return process_part1(&data.replace("\r", ""));
 }
 
 

@@ -36,8 +36,10 @@ ul {
 }
 
 p {
-  white-space: pre;
+  white-space: pre-line;
+  max-width: 60rem;
 }
+
 
 code {
   position: relative;
@@ -54,32 +56,41 @@ code {
 
 
 textarea {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-family: "Source Code Pro", monospace;
   background-color: #10101a;
   border: 1px solid #28282d;
   color: #cccccc;
   max-height: 600px;
-  min-height: 200px;
+  min-height: 100px;
   min-width: 100px;
   padding-left: 2px;
   padding-right: 2px;
 }
 
 textarea:focus {
-  outline: none;
+  outline: white;
 }
 
-textarea::-webkit-scrollbar {
+::-webkit-scrollbar
+{
   width: 0.35rem;
+  height: 0.35rem;
   cursor: auto;
+  position:absolute
 }
 
-textarea::-webkit-scrollbar-track {
+textarea:hover::-webkit-scrollbar {
+  width: 0.45rem;
+  height: 0.45rem;
+}
+
+::-webkit-scrollbar-track {
   background: #cccccc;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
-textarea::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background: #009900;
 }
 
@@ -101,5 +112,15 @@ input[type="file"]::file-selector-button:hover {
   color: #ffff66;
 }
 
+a {
+  color:#009900;
+}
+
+a:hover { 
+  text-shadow: 0 0 2px #00cc00, 0 0 5px #00cc00;
+}
 
 
+ol {
+  list-style-position: inside;
+}
