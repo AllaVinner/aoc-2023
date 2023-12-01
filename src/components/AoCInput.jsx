@@ -16,8 +16,8 @@ function AoCInput({ inputContent, setInputContent }) {
                 <textarea
                     wrap={'off'}
                     name="Text1"
-                    cols="40"
-                    rows="5"
+                    cols="60"
+                    rows="8"
                     value={inputContent}
                     onChange={(e) => setInputContent(e.target.value)}
                 >                    

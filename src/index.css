@@ -38,6 +38,7 @@ ul {
 p {
   white-space: pre-line;
   max-width: 60rem;
+  line-height: 1.4;
 }
 
 
@@ -54,18 +55,19 @@ code {
 }
 
 
-
 textarea {
   font-size: 1.2rem;
   font-family: "Source Code Pro", monospace;
   background-color: #10101a;
   border: 1px solid #28282d;
   color: #cccccc;
-  max-height: 600px;
+  max-height: 1000px;
   min-height: 100px;
   min-width: 100px;
   padding-left: 2px;
   padding-right: 2px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 textarea:focus {
@@ -118,6 +120,11 @@ a {
 
 a:hover { 
   text-shadow: 0 0 2px #00cc00, 0 0 5px #00cc00;
+}
+
+h2 {
+  margin-top: 1.0rem;
+  margin-bottom: 1.0rem;
 }
 
 
