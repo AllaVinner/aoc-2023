@@ -17,9 +17,8 @@ fn main() {
 `   
     useEffect(() => {
         try {
-            console.log(inputContent)
-            let new_ans = wasm.day01_part1(inputContent);
-            setAnswere(new_ans)
+            let new_ans = wasm.day01(inputContent);
+            console.log(new_ans)
         } catch (error) {
             setAnswere("<Invalid Input>")
         }

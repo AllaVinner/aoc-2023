@@ -1,5 +1,5 @@
 mod utils;
-
+mod days;
 use wasm_bindgen::prelude::*;
 
 
@@ -35,12 +35,14 @@ fn process_part1(input: &str) -> String {
 }
 
 
-#[wasm_bindgen(js_name=day01_part1)]
-pub fn print_image(data: String) -> String{
+#[wasm_bindgen(js_name=day01)]
+pub fn day01(data: String) -> Vec<String> {
     if data == "" {
-        return "".to_string();
+        return vec![];
     }
-    return process_part1(&data);
+    return vec![
+        days::day01::part1(&data),
+        days::day01::part2(&data)
+    ];
 }
-
 

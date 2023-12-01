@@ -2,6 +2,6 @@
 /* eslint-disable */
 /**
 * @param {string} data
-* @returns {string}
+* @returns {(string)[]}
 */
-export function day01_part1(data: string): string;
+export function day01(data: string): (string)[];
