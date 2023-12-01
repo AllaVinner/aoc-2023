@@ -1,18 +1,4 @@
 
-
-
-fn extract_number(line: &str) -> u32 {
-    let mut detector = line
-        .chars()
-        .filter_map(|c: char| c.to_digit(10));
-    let first = detector.next().unwrap_or(0);
-    let last = detector.last().unwrap_or(first);
-    return format!("{first}{last}")
-        .parse::<u32>()
-        .expect("Should have valid number.")
-}
-
-
 pub fn part1(input: &str) -> String {
     return input
         .lines()
@@ -21,12 +7,30 @@ pub fn part1(input: &str) -> String {
         .to_string()
 }
 
+pub fn part2(input: &str) -> String {
+    return input
+        .lines()
+        .map(|line| extract_number_including_written(line))
+        .sum::<u32>()
+        .to_string()
+}
+
+
+fn extract_number(line: &str) -> u32 {
+    let mut detector = line
+        .chars()
+        .filter_map(|c: char| c.to_digit(10));
+    let first = detector.next().unwrap_or(0);
+    let last = detector.last().unwrap_or(first);
+    return first*10 + last;
+}
+
 
 fn extract_number_including_written(line: &str) -> u32 {
-    let mut detector = (0..line.len()).filter_map(|i| {
-        let remaining_line = &line[i..];
-        let result: char = 
-            if remaining_line.starts_with("one") {
+    let mut detector = (0..line.len())
+        .map(|i| &line[i..])
+        .map(|remaining_line| {
+            return if remaining_line.starts_with("one") {
                 '1'
             } else if remaining_line.starts_with("two") {
                 '2'
@@ -46,25 +50,10 @@ fn extract_number_including_written(line: &str) -> u32 {
                 '9'
             } else {
                 remaining_line.chars().next().unwrap()
-            };    
-        return result.to_digit(10)
-    });
-        
-    let first = detector.next().expect("Should contain atleast one digit character.");
-    let last = match detector.last() {
-        Some(digit_char) => digit_char,
-        None => first
-    };
-    return format!("{first}{last}")
-        .parse::<u32>()
-        .expect("Should have valid number.")
-}
-
-
-pub fn part2(input: &str) -> String {
-    return input
-        .lines()
-        .map(|line| extract_number_including_written(line))
-        .sum::<u32>()
-        .to_string()
+            }; 
+        })
+        .filter_map(|c: char| c.to_digit(10));    
+    let first = detector.next().unwrap_or(0);
+    let last = detector.last().unwrap_or(first);
+    return first*10 + last;
 }
