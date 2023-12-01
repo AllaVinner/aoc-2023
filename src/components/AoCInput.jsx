@@ -10,10 +10,18 @@ function AoCInput({ inputContent, setInputContent }) {
     return (
         <>
             <div className='aoc-input'>
-                Input text or upload a file:&nbsp;
+                Input text or upload file:&nbsp;
                 <TextFileUpload setText={setFileContent} /> 
                 <br></br>
-                <textarea name="Text1" cols="40" rows="5" value={inputContent} onChange={(e) => setInputContent(e.target.value)}></textarea>
+                <textarea
+                    wrap={'off'}
+                    name="Text1"
+                    cols="40"
+                    rows="5"
+                    value={inputContent}
+                    onChange={(e) => setInputContent(e.target.value)}
+                >                    
+                </textarea>
             </div>
         </>
     )

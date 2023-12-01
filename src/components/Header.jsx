@@ -6,8 +6,11 @@ function Header() {
 
     return (
         <>
-            <div className={"header"}>
+            <div className={"header green-glow"}>
                 Advent of Rust
+            </div>
+            <div>
+                --- Learn Rust through Advent of Code ---
             </div>
         </>
     )
