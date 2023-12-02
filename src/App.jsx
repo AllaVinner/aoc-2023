@@ -25,7 +25,7 @@ function Dummy({text}) {
 function App() {
   let pages = [
     { title: ' 1', content: <Day01/> },
-    { title: ' 2', content: <Day404 /> },
+    { title: ' 2', content: <Day02 /> },
     { title: ' 3', content: <Day404 /> },
     { title: ' 4', content: <Day404 /> },
     { title: ' 5', content: <Day404 /> },
@@ -49,7 +49,7 @@ function App() {
     { title: '24', content: <Day404 /> },
     { title: '25', content: <Day404 /> }
   ]
-  const [selectedPage, selectPage] = useState(pages[0].title)
+  const [selectedPage, selectPage] = useState(pages[1].title)
 
   return (
     <>

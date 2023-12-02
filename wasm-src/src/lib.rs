@@ -27,3 +27,11 @@ pub fn day01(data: String) -> Vec<String> {
     ];
 }
 
+
+#[wasm_bindgen(js_name=day02)]
+pub fn day02(data: String) -> Vec<String> {
+    return vec![
+        days::day02::part1(&data),
+        days::day02::part2(&data)
+    ];
+}
