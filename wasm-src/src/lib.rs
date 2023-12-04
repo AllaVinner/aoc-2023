@@ -35,3 +35,24 @@ pub fn day02(data: String) -> Vec<String> {
         days::day02::part2(&data)
     ];
 }
+
+
+#[wasm_bindgen(js_name=day03_part1)]
+pub fn day03_part1(input: &str) -> String {
+    return days::day03::part1(&input);
+}
+
+#[wasm_bindgen(js_name=day03_part2)]
+pub fn day03_part2(input: &str) -> String {
+    return days::day03::part2(&input);
+}
+
+#[wasm_bindgen(js_name=day04_part1)]
+pub fn day04_part1(input: &str) -> String {
+    return days::day04::part1(&input);
+}
+
+#[wasm_bindgen(js_name=day04_part2)]
+pub fn day04_part2(input: &str) -> String {
+    return days::day04::part2(&input);
+}
