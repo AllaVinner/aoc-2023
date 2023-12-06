@@ -53,6 +53,27 @@ pub fn day04_part1(input: &str) -> String {
 }
 
 #[wasm_bindgen(js_name=day04_part2)]
-pub fn day04_part2(input: &str) -> String {
+pub fn day04_part2(input: &str) -> Result<String, String> {
     return days::day04::part2(&input);
 }
+
+#[wasm_bindgen(js_name=day05_part1)]
+pub fn day05_part1(input: &str) -> String {
+    return days::day05::part1(&input);
+}
+
+#[wasm_bindgen(js_name=day05_part2)]
+pub fn day05_part2(input: &str) -> String {
+    return days::day05::part2(&input);
+}
+
+#[wasm_bindgen(js_name=day06_part1)]
+pub fn day06_part1(input: &str) -> Result<String, String> {
+    return days::day06::part1(&input);
+}
+
+#[wasm_bindgen(js_name=day06_part2)]
+pub fn day06_part2(input: &str) -> Result<String, String> {
+    return days::day06::part2(&input);
+}
+    

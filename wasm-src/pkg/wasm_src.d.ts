@@ -30,3 +30,23 @@ export function day04_part1(input: string): string;
 * @returns {string}
 */
 export function day04_part2(input: string): string;
+/**
+* @param {string} input
+* @returns {string}
+*/
+export function day05_part1(input: string): string;
+/**
+* @param {string} input
+* @returns {string}
+*/
+export function day05_part2(input: string): string;
+/**
+* @param {string} input
+* @returns {string}
+*/
+export function day06_part1(input: string): string;
+/**
+* @param {string} input
+* @returns {string}
+*/
+export function day06_part2(input: string): string;

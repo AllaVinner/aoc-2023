@@ -47,24 +47,23 @@ use nom::{
       return val.to_string();
   }
 
-  pub fn part2(input: &str) -> String {
+  pub fn part2(input: &str) -> Result<String, String> {
     let num_cards = input.lines().count();
     let mut tracker = vec![1; num_cards];
-    let val: u32 = input.lines().enumerate().map(|(row, line)| {
+    let mut val: u32 = 0;
+    for (row, line) in input.lines().enumerate() {
         match parse_line(line) {
-            Err(_) => panic!("Did not parse"),
+            Err(_) => return Err("Did not parse properly".to_string()),
             Ok((_, (id, winners, tickets))) => {
                 let count = winners.iter().filter(|winner| tickets.contains(winner)).count();
                 for i in 1..cmp::min(count+1, num_cards-row+2) {
                     tracker[row+i] += tracker[row];
                 }
                 if count > 0 {
-                    return 2_u32.pow(count as u32-1);
-                } else {
-                    return 0;
+                    val += 2_u32.pow(count as u32-1);
                 }
             }
         }
-    }).sum::<u32>();
-    return tracker.iter().sum::<u32>().to_string();
+    }
+    return Ok(tracker.iter().sum::<u32>().to_string());
 }
