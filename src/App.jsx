@@ -30,7 +30,7 @@ function App() {
     { title: ' 4', content: <Day04 /> },
     { title: ' 5', content: <Day05 /> },
     { title: ' 6', content: <Day06 /> },
-    { title: ' 7', content: <Day404 /> },
+    { title: ' 7', content: <Day07 /> },
     { title: ' 8', content: <Day404 /> },
     { title: ' 9', content: <Day404 /> },
     { title: '11', content: <Day404 /> },
