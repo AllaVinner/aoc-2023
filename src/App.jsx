@@ -31,7 +31,7 @@ function App() {
     { title: ' 5', content: <Day05 /> },
     { title: ' 6', content: <Day06 /> },
     { title: ' 7', content: <Day07 /> },
-    { title: ' 8', content: <Day404 /> },
+    { title: ' 8', content: <Day08 /> },
     { title: ' 9', content: <Day404 /> },
     { title: '11', content: <Day404 /> },
     { title: '12', content: <Day404 /> },

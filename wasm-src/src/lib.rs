@@ -84,8 +84,18 @@ pub fn day07_part1(input: &str) -> Result<String, String> {
 
 #[wasm_bindgen(js_name=day07_part2)]
 pub fn day07_part2(input: &str) -> Result<String, String> {
-    if input == "ABA" {
-        return Err("THIS WAS ALMOST ABBA.".to_string());
-    }
     return days::day07::part2(&input);
 }
+
+
+#[wasm_bindgen(js_name=day08_part1)]
+pub fn day08_part1(input: &str) -> Result<String, String> {
+    return days::day08::part1(&input);
+}
+
+#[wasm_bindgen(js_name=day08_part2)]
+pub fn day08_part2(input: &str) -> Result<String, String> {
+    return days::day08::part2(&input);
+}
+
+
