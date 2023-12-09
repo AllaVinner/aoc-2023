@@ -21,27 +21,35 @@ fn iter_num<'a>(s: &'a str) -> NumberIterator<'a> {
 }
 
 fn symbole_on_boundary<'a>(lines: &Vec<&'a str>, row: usize, start: usize, end: usize) -> bool {
+    // Upper Side
     if row > 0 && lines[row-1][start..end].contains(|c: char| c != '.') {
         return true;
     }
+    // Lower row
     if row < lines.len()-1 && lines[row+1][start..end].contains(|c: char| c != '.') {
         return true;
     }
+    // Upper Left corner
     if row > 0 && start > 0 && &lines[row-1][start-1..start] != "." {
         return true;
     }
+    // Upper right corner
     if row > 0 && end < lines[row].len()-1 && &lines[row-1][end..end+1] != "." {
         return true;
     }
+    // Lower left corner
     if row < lines.len() - 1 && start > 0 && &lines[row+1][start-1..start] != "." {
         return true;
     }
+    // Lower right corner
     if row < lines.len() - 1 && end < lines[row].len()-1 && &lines[row+1][end..end+1] != "." {
         return true;
     }
+    // Left side
     if start > 0 && &lines[row][start-1..start] != "." {
         return true;
     }
+    // Right Side
     if end < lines[row].len()-1 && &lines[row][end..end+1] != "." {
         return true;
     }

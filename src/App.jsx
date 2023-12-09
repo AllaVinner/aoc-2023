@@ -32,7 +32,7 @@ function App() {
     { title: ' 6', content: <Day06 /> },
     { title: ' 7', content: <Day07 /> },
     { title: ' 8', content: <Day08 /> },
-    { title: ' 9', content: <Day404 /> },
+    { title: ' 9', content: <Day09 /> },
     { title: '11', content: <Day404 /> },
     { title: '12', content: <Day404 /> },
     { title: '13', content: <Day404 /> },
@@ -49,7 +49,7 @@ function App() {
     { title: '24', content: <Day404 /> },
     { title: '25', content: <Day404 /> }
   ]
-  const [selectedPage, selectPage] = useState(pages[3 -1].title)
+  const [selectedPage, selectPage] = useState(pages[7 -1].title)
 
   return (
     <>
