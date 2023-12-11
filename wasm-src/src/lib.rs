@@ -99,7 +99,6 @@ pub fn day08_part2(input: &str) -> Result<String, String> {
 }
 
 
-
 #[wasm_bindgen(js_name=day09_part1)]
 pub fn day09_part1(input: &str) -> Result<String, String> {
     return days::day09::part1(&input);
@@ -109,3 +108,15 @@ pub fn day09_part1(input: &str) -> Result<String, String> {
 pub fn day09_part2(input: &str) -> Result<String, String> {
     return days::day09::part2(&input);
 }
+
+
+#[wasm_bindgen(js_name=day11_part1)]
+pub fn day11_part1(input: &str) -> Result<String, String> {
+    return days::day11::part1(&input);
+}
+
+#[wasm_bindgen(js_name=day11_part2)]
+pub fn day11_part2(input: &str) -> Result<String, String> {
+    return days::day11::part2(&input);
+}
+

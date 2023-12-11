@@ -14,6 +14,7 @@ import Day07 from "./pages/Day07";
 import Day08 from "./pages/Day08";
 import Day09 from "./pages/Day09";
 import Day10 from "./pages/Day10";
+import Day11 from "./pages/Day11";
 import Day404 from "./pages/Day404";
 
 
@@ -33,7 +34,8 @@ function App() {
     { title: ' 7', content: <Day07 /> },
     { title: ' 8', content: <Day08 /> },
     { title: ' 9', content: <Day09 /> },
-    { title: '11', content: <Day404 /> },
+    { title: '10', content: <Day10 /> },
+    { title: '11', content: <Day11 /> },
     { title: '12', content: <Day404 /> },
     { title: '13', content: <Day404 /> },
     { title: '14', content: <Day404 /> },
@@ -49,7 +51,7 @@ function App() {
     { title: '24', content: <Day404 /> },
     { title: '25', content: <Day404 /> }
   ]
-  const [selectedPage, selectPage] = useState(pages[7 -1].title)
+  const [selectedPage, selectPage] = useState(pages[11 -1].title)
 
   return (
     <>
