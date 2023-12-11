@@ -70,3 +70,13 @@ export function day08_part1(input: string): string;
 * @returns {string}
 */
 export function day08_part2(input: string): string;
+/**
+* @param {string} input
+* @returns {string}
+*/
+export function day09_part1(input: string): string;
+/**
+* @param {string} input
+* @returns {string}
+*/
+export function day09_part2(input: string): string;

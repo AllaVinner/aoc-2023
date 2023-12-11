@@ -99,7 +99,7 @@ pub fn part2(input: &str) -> Result<String, String> {
     
     let mut positions:  Vec<String> = map.keys().filter(|k| k.ends_with("A")).map(|k| k.to_string()).collect();
     let original = positions.clone();
-    return Ok(format!("Num A: {positions} ends {ends}").to_string());
+    return Ok(format!("Num A: ends").to_string());
     let mut count = 0;
     for (i, direction) in dircetions.iter().cycle().enumerate() {
         let new_position = vec![];
