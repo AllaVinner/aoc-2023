@@ -80,3 +80,13 @@ export function day09_part1(input: string): string;
 * @returns {string}
 */
 export function day09_part2(input: string): string;
+/**
+* @param {string} input
+* @returns {string}
+*/
+export function day11_part1(input: string): string;
+/**
+* @param {string} input
+* @returns {string}
+*/
+export function day11_part2(input: string): string;

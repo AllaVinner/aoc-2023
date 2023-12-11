@@ -46,7 +46,7 @@ for (g1i, [g1r, g1c]) in galaxies.iter().take(galaxies.len()-1).enumerate() {
     for (g2i, [g2r, g2c]) in galaxies.iter().enumerate().skip(g1i+1) {
         let extra_rows = empty_rows.iter().filter(|row| val_in_range(row, g2r, g1r)).count();
         let extra_cols = empty_columns.iter().filter(|col| val_in_range(col, g2c, g1c)).count();
-        let dist = abs(g2r, g1r) + abs(g2c, g1c) + extra_rows + extra_cols;
+        let dist = distance(g2r, g1r) + distance(g2c, g1c) + extra_rows + extra_cols;
         total += dist;
     }
 }
@@ -55,10 +55,12 @@ const bigDistanceCount = `\
 let mut total = 0;
 for (g1i, [g1r, g1c]) in galaxies.iter().take(galaxies.len()-1).enumerate() {
     for (g2i, [g2r, g2c]) in galaxies.iter().enumerate().skip(g1i+1) {
-        let extra_rows = empty_rows.iter().filter(|row| val_in_range(row, g2r, g1r)).count();
-        let extra_cols = empty_columns.iter().filter(|col| val_in_range(col, g2c, g1c)).count();
-        let dist = abs(g2r, g1r) + abs(g2c, g1c) + (100000-1)*extra_rows + (100000-1)*extra_cols;
-        total += dist;
+        let extra_rows = empty_rows.iter().filter(|row| min(g1r, g2r) < *row && *row < max(g1r, g2r)).count();
+        let extra_cols = empty_columns.iter().filter(|col| min(g1c, g2c) < *col && *col < max(g1c, g2c)).count();
+        total += distance(g2r, g1r) as u64 + 
+                 distance(g2c, g1c) as u64 + 
+                 (1_000_000-1)*extra_rows as u64 + 
+                 (1_000_000-1)*extra_cols as u64;
     }
 }
 `
@@ -80,7 +82,7 @@ function Day11() {
                 setPart1Ans(result)
             } catch (error) {
                 console.log("Error: ", error);
-                setPart1Ans("<Invalid Input>")
+                setPart1Ans(`<Err>: ${error}`)
             }
             try {
                 let result = wasm.day11_part2(inputContent);
@@ -88,7 +90,7 @@ function Day11() {
                 setPart2Ans(result)
             } catch (error) {
                 console.log("Error: ", error);
-                setPart2Ans("<Invalid Input>")
+                setPart2Ans(`<Err>: ${error}`)
             }
         }
     }, [inputContent])
@@ -111,6 +113,11 @@ function Day11() {
                     {' '}
                     <a href='https://github.com/AllaVinner/aoc-2023/blob/main/wasm-src/src/days/day11.rs'>solution</a>
                 </div> <br />
+                <h2>The tricky parts</h2>
+                <p>
+                    - Do not actually simulate the expansion. Instead calculate the created room. <br />
+                    - The numbers get big, make sure you are using <code>u64</code> and do not rely on <code>usize</code>.
+                </p>
                 <h2>Part 1: Slow Expansion</h2>
                 <p>
                     Today we are dealing with a matrix, might be time to introduce&nbsp;
