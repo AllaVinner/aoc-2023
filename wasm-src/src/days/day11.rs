@@ -18,6 +18,14 @@ fn distance(a: &usize, b: &usize) -> usize {
 }
 
 
+fn val_in_range(val: usize, start: usize, end: usize) -> bool {
+    if start < end {
+        start < val && val < end
+    } else {
+        end < val && val < start
+    }
+}
+
 fn parse(input: &str) -> Result<Array2<Cell>, String> {
     let num_rows = input.lines().count();
     let num_columns = match input.lines().find_map(|line| Some(line.chars().count())) {
@@ -48,7 +56,6 @@ fn parse(input: &str) -> Result<Array2<Cell>, String> {
         Err(_) => Err("Could not convert vec into array.".to_string())
     };
 }
-
 
 pub fn part1(input: &str) -> Result<String, String> {
     let sky: Array2<Cell> = match parse(input) {
@@ -85,7 +92,6 @@ pub fn part1(input: &str) -> Result<String, String> {
     }
     return Ok(total.to_string());
 }
-
 
 pub fn part2(input: &str) -> Result<String, String> {
     let sky: Array2<Cell> = match parse(input) {
